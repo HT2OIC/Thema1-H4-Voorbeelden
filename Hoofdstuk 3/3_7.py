@@ -2,6 +2,9 @@
 # Zonder import kan je random niet gebruiken
 import random
 
+# Seednummer kiezen --> Alleen om te testen!
+random.seed(5)
+
 # Kommagetal (float) tussen 0.0 en 1.O (exclusief)
 print(random.random())
 
