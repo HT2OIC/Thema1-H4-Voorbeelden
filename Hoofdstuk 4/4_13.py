@@ -1,10 +1,9 @@
-def update():
-    teller_snelheid += 1
+def draw():
+    teken_gaten(75)
+    teken_gaten(225)
+    teken_gaten(375)
+    teken_gaten(525)
+    teken_gaten(675)
 
-    if teller_snelheid >= snelheid:
-        mol.x = mol_positie_bepalen()
-        teller_snelheid = 0
-
-def mol_positie_bepalen():
-    positie = random.choice([75, 225, 375, 525, 675])
-    return positie
+def teken_gaten(x_positie):
+    screen.draw.filled_circle((x_positie, 450), 50, "black")

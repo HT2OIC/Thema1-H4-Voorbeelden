@@ -1,6 +1,3 @@
-def draw():
-    teken_gaten()
-
 def teken_gaten():
     screen.draw.filled_circle((75, 450), 50, "black")
     screen.draw.filled_circle((225, 450), 50, "black")

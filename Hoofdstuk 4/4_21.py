@@ -25,6 +25,7 @@ score = 0
 
 # Achtergrond, mol, gaten en score tekenen
 def draw():
+
     achtergrond.draw()
 
     teken_gaten(75)
@@ -47,6 +48,14 @@ def update():
         mol.x = mol_positie_bepalen()
         teller_snelheid = 0
 
+# Wanneer de speler klikt: controleer of hij de mol raakt.
+def on_mouse_down(pos):
+    if mol.collidepoint(pos):
+        update_score(True)
+    else:
+        update_score(False)
+
+
 def teken_gaten(x_positie):
     """Tekent een zwart gat op het opgegeven coördinaat.
 
@@ -59,10 +68,24 @@ def teken_gaten(x_positie):
 def mol_positie_bepalen():
     """Bepaalt willekeurig een nieuwe x-positie voor de mol.
 
-    Return:
+    Returns:
         int:  Een nieuw x-coördinaat voor de mol."""
     
     positie = random.choice([75, 225, 375, 525, 675])
     return positie
+
+
+def update_score(raak):
+    """Past de score aan en geeft feedback op basis van of de mol werd geraakt of niet.
+
+    Argumenten:
+       raak (boolean): Is de mol geraakt? """
+    global score
+    if raak:
+        score += 1
+        print("Aaah!")
+    else:
+        score -= 1
+        print("Je hebt me gemist!")
 
 pgzrun.go()
