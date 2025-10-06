@@ -6,7 +6,6 @@
 # - Introductie tot Pygame Zero: afbeeldingen, muisklik, collision, tekst
 
 import pgzrun
-import random
 
 # Grootte van het venster
 WIDTH = 750
