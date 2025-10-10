@@ -1,0 +1,17 @@
+lijst = [3, 1, 4]
+
+lijst.append(2)
+print(lijst)
+lijst.extend([5, 6])
+print(lijst)
+lijst.insert(1, 10)
+print(lijst)
+lijst.remove(4)
+print(lijst)
+laatste = lijst.pop()
+print(laatste)
+print(lijst)
+lijst.sort()
+print(lijst)
+lijst.reverse()
+print(lijst)
