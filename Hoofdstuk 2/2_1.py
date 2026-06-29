@@ -1,2 +1,4 @@
-variabele_naam = "tekst"
-variabele_naam2 = 0
+dier = "koe"
+werkwoord1 = "woonde"
+werkwoord2 = "breien"
+leeftijd = 3
