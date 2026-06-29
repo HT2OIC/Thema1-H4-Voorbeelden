@@ -1,5 +1,4 @@
-# Extra functionaliteit aan Python toevoegen
-# Zonder import kan je random niet gebruiken
+# Altijd bovenaan je bestand zetten
 import random
 
 # Seednummer kiezen --> Alleen om te testen!
@@ -15,5 +14,5 @@ print(random.randint(1, 5))
 # --> 1, 3, of 5
 print(random.randrange(1, 5, 2))
 
-# Willekeurig element uit de lijst
+# Willekeurig element uit lijst
 print(random.choice(["hallo", "dag", "hoi", "hey"]))

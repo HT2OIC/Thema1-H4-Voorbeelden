@@ -1,12 +1,5 @@
 # Trivial Pursuit
-# Spel waarin de gebruiker een willekeurige quizvraag beantwoordt.
-# Oefent op:
-# - input
-# - condities
-# - datatypes
-# - logische operatoren (and, or, not) 
-# - stringfuncties
-
+# Stelt een vraag en controleert het antwoord.
 import random
 
 print("Welkom bij Trivial Pursuit!")
@@ -16,7 +9,7 @@ vraag_aardrijkskunde = "Welke planeet staat bekend als de rode planeet?"
 vraag_kunst_literatuur= "Wie schilderde de Mona Lisa?"
 vraag_sport_ontspanning = "Hoe wordt de sport synchroonzwemmen nog genoemd?"
 vraag_amusement = "Wat gebeurt in Harry Potter en de Steen Der Wijzen?"
-
+vraag_wetenschap_natuur = "Geef het getal pi tot 5 cijfers na de komma."
 
 antwoord_aardrijkskunde = "Mars"
 antwoord_kunst_literatuur = "Leonardo da Vinci"
@@ -24,9 +17,10 @@ antwoord_sport_ontspanning_mogelijkheid1 = "kunstzwemmen"
 antwoord_sport_ontspanning_mogelijkheid2 = "waterballet"
 antwoord_amusement_kernwoord1 = "steen"
 antwoord_amusement_kernwoord2 = "Voldemort"
+antwoord_wetenschap_natuur = 3.14159
 
-# Eén van de 4 vragen stellen en het antwoord controleren.
-vraag = random.randint(1, 4)
+# Eén van de 5 vragen stellen en het antwoord controleren.
+vraag = random.randint(1, 5)
 
 # Vraag 1 – aardrijkskunde
 # Hoofdletterongevoelig vergelijken (via .lower())
@@ -63,3 +57,12 @@ elif vraag == 4:
         print("Proficiat! Je hebt de vraag juist beantwoord.")
     else:
         print("Jammer! In je antwoord moesten zeker de kernwoorden: ", antwoord_amusement_kernwoord1, "en:", antwoord_amusement_kernwoord2, "staan.")
+
+# Vraag 5 – wetenschap en natuur
+# Antwoord is een kommagetal (float)
+elif vraag == 5:
+    antwoord = float(input(vraag_wetenschap_natuur))
+    if antwoord == antwoord_wetenschap_natuur:
+        print("Proficiat! Je hebt de vraag juist beantwoord.")
+    else:
+        print("Jammer! Het juist antwoord was: ", str(antwoord_wetenschap_natuur))

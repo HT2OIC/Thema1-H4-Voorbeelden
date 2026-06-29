@@ -1,0 +1,1 @@
+lengte = float(input("Wat is jouw lengte in meter? "))
