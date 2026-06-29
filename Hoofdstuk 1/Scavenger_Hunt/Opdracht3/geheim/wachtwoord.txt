@@ -1,1 +1,3 @@
 Het geheime wachtwoord is: sand2code
+
+Ga naar opdracht 4 en verbeter de code in foutje.py.

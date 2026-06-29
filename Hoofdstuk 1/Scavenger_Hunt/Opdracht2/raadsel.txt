@@ -1,3 +1,7 @@
 Ik ben altijd in de terminal aanwezig.
 Ik zeg waar je bent zonder je te verplaatsen.
 Wat ben ik?
+
+Weet je het niet? Bekijk de tip van hint.py.
+
+Gevonden? Ga naar opdracht 3 en zoek het geheime wachtwoord.

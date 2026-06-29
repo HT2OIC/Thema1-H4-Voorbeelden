@@ -8,10 +8,12 @@
 
 import pgzrun
 import time
+import pygame
 
 # Grootte van het venster
-WIDTH = 1040
-HEIGHT = 260
+WIDTH = 1920
+HEIGHT = 1080
+fullscreen = True
 
 # Actoren instellen
 achtergrond = Actor("mario_achtergrond")
@@ -39,6 +41,10 @@ mario_snelheid_y = 0
 score = 0
 
 def draw():
+    global fullscreen
+    if fullscreen:
+        pygame.display.set_mode((WIDTH, HEIGHT), pygame.FULLSCREEN)
+        fullscreen = False 
     screen.clear()
     
     achtergrond.draw()
@@ -140,6 +146,5 @@ def verwerk_zwaartekracht_en_platform():
 def mario_reset():
     """Reset Mario naar de lopende afbeelding."""
     mario.image = "mario_lopen"
-
-    
+  
 pgzrun.go()

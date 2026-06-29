@@ -1,8 +1,5 @@
+# Super Mario
 # Vereenvoudigde Super Mario: Mario beweegt links en rechts met de pijltjestoetsen, Goomba beweegt automatisch, er is botsingsdetectie met de munten en Goomba.
-# Leerdoelen:
-# - Gebruik van Actoren
-# - Botsingsdetectie
-# - Lijsten gebruiken
 
 import pgzrun
 
@@ -11,35 +8,40 @@ WIDTH = 1040
 HEIGHT = 260
 
 # Actoren instellen
-achtergrond = Actor("mario_achtergrond")
-mario = Actor("mario_lopen")
+achtergrond = 'mario_achtergrond'
+mario = Actor('mario_lopen')
 mario.pos = (50, 200)
-goomba = Actor("mario_goomba")
+goomba = Actor('mario_goomba')
 goomba.pos = (600, 200)
 
 # Meerdere muntjes op verschillende posities plaatsen
 munten_posities = [(300, 200), (325, 100), (800, 200)]
 munten = []
 for pos in munten_posities:
-    munt = Actor("mario_munt")
+    munt = Actor('mario_munt')
     munt.pos = pos
     munten.append(munt)
 
-# Score initialiseren
-score = 0
+# Spelstatus in een dictionary
+spel = {
+    'score': 0,
+    'levens': 3,
+    'actief': True
+}
 
 def draw():
     screen.clear()
-    
-    achtergrond.draw()
+
+    screen.blit(achtergrond, (0, 0))
 
     mario.draw()
     goomba.draw()
 
     for munt in munten:
         munt.draw()
-
-    screen.draw.text(f"Score: {score}", (10, 10), color=(255, 0, 0), fontsize=40)
+        
+    screen.draw.text(f"Score: {spel['score']}", (10, 10), color=(255,0,0), fontsize=40)
+    screen.draw.text(f"Levens: {spel['levens']}", (10, 50), color=(255,0,0), fontsize=40)
 
 def update():
     pass
