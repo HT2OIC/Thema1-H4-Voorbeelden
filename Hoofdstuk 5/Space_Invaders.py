@@ -1,14 +1,5 @@
 # Space Invaders
 # De speler beweegt een schip en ontwijkt vallende aliens.
-# Oefent op:
-# - for- en while-lussen
-# - lijsten doorlopen
-# - functies definiëren en oproepen
-# - botsingen detecteren
-# - toetsenbordinput verwerken
-# - werken met Actoren (positie, tekenen)
-# - gebruik van random
-
 import pgzrun
 import random
 
@@ -23,7 +14,7 @@ schip.pos = (WIDTH/2, HEIGHT-50)
 # Maak 5 aliens en stop ze in een lijst
 alien_lijst = []
 
-for i in range(5):
+for _ in range(5):
     alien = Actor("spaceinvaders_alien")
     alien.pos = (random.randrange(50, 1450, 100), random.randint(-500, 0))
     alien_lijst.append(alien)
