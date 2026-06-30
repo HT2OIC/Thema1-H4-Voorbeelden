@@ -1,0 +1,1 @@
+mario.image = "mario_spring"

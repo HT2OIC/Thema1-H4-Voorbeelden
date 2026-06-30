@@ -1,48 +1,46 @@
-# Pokémon
-# De speler verkent één zone: dorp
-# Hij moet een Pokéball vinden en naar het bos gaan.
-# Oefent op: 
-# - beweging
-# - botsingen
-# - functies
-
+# Super Mario
+# Verzamel munten en ontwijk de Goomba. Je wint het spel als je tegen de vlaggenmast springt.
 import pgzrun
 
 # Grootte van het venster
-WIDTH = 1000
-HEIGHT = 850
+WIDTH = 1040
+HEIGHT = 260
 
-# Actoren: de speler, objecten en gebieden
-dorp = Actor("pokemon_dorp")
-speler = Actor("pokemon_ash")
-speler.pos = (650, 260)
-pokeball = Actor("pokemon_pokeball", (300, 625))
-tekstveld = Rect((0, 750), (1000, 100))
-deur_bos = Rect((450, 0), (100, 50))
+# Actoren instellen
+achtergrond = 'mario_achtergrond'
+mario = Actor('mario_lopen')
+mario.pos = (50, 200)
+goomba = Actor('mario_goomba')
+goomba.pos = (600, 200)
 
-# Tekst die onderaan het scherm verschijnt
-boodschap = ""
-opdracht = "Zoek een Pokéball."
+# Meerdere muntjes op verschillende posities plaatsen
+munten_posities = [(300, 200), (325, 100), (800, 200)]
+munten = []
+for pos in munten_posities:
+    munt = Actor('mario_munt')
+    munt.pos = pos
+    munten.append(munt)
+
+# Spelstatus in een dictionary
+spel = {
+    'score': 0,
+    'levens': 3,
+    'actief': True
+}
 
 def draw():
-    # Teken alles op het scherm.
     screen.clear()
 
-    draw_dorp()
+    screen.blit(achtergrond, (0, 0))
 
-    # Tekst tonen onderaan: opdracht en boodschap
-    screen.draw.filled_rect(tekstveld, color="navy")
-    screen.draw.text(boodschap, (20, 775), color = "red", fontsize = 30)
-    screen.draw.text(opdracht, (20, 800), color = "white", fontsize = 30)
+    mario.draw()
+    goomba.draw()
 
-def draw_dorp():
-    """
-        Elementen dorp tekenen.
-    """
-    dorp.draw()
-    speler.draw()
-    pokeball.draw()
-    
+    for munt in munten:
+        munt.draw()
+        
+    screen.draw.text(f"Score: {spel['score']}", (10, 10), color=(255,0,0), fontsize=40)
+    screen.draw.text(f"Levens: {spel['levens']}", (10, 50), color=(255,0,0), fontsize=40)
 
 def update():
     pass
